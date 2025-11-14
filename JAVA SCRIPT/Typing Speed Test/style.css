@@ -1,0 +1,268 @@
+/* === Global Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === Background with animated gradient === */
+body {
+    font-family: 'Poppins', 'Courier New', monospace;
+    background: linear-gradient(270deg, #667eea, #764ba2, #4ECDC4, #ff6b6b, #ffb347);
+    background-size: 1000% 1000%;
+    animation: gradientShift 18s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === Container with animated entrance === */
+.container {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 60%;
+    width: 100%;
+    height: 80%;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    animation: fadeUp 1.2s ease forwards;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Animated Heading === */
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #4ECDC4, #ff6b6b);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradient 6s ease infinite, pulseText 2.5s ease-in-out infinite;
+    letter-spacing: 2px;
+}
+
+@keyframes textGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseText {
+    0%, 100% { text-shadow: 0 0 15px rgba(118, 75, 162, 0.4); }
+    50% { text-shadow: 0 0 30px rgba(118, 75, 162, 0.8); }
+}
+
+/* === Stats Bar with floating animation === */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+    animation: floatUp 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-8px); }
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
+    transform: rotate(30deg);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.stat-box:hover::before {
+    opacity: 1;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(118, 75, 162, 0.5);
+}
+
+.stat-box h3 {
+    font-size: 1em;
+    margin-bottom: 8px;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.stat-box div {
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+/* === Typing Text Display === */
+.text-display {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    min-height: 160px;
+    transition: box-shadow 0.3s ease;
+    animation: fadeIn 1s ease;
+}
+
+.text-display:hover {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.text-display .correct {
+    color: #00c853;
+}
+
+.text-display .incorrect {
+    color: #ff1744;
+    background: #ffe6e6;
+    border-radius: 5px;
+    padding: 0 3px;
+}
+
+.text-display .current {
+    background: #667eea;
+    color: white;
+    border-radius: 5px;
+}
+
+/* === Typing Area === */
+#typingArea {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2em;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    resize: vertical;
+    min-height: 150px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+}
+
+#typingArea:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 25px rgba(102, 126, 234, 0.6);
+    transform: scale(1.02);
+}
+
+/* === Buttons with glowing gradient animations === */
+.start-btn, .reset-btn, .timeBtn1, .timeBtn2, .timeBtn3 {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 250% 250%;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-btn:hover, .reset-btn:hover, 
+.timeBtn1:hover, .timeBtn2:hover, .timeBtn3:hover {
+    background-position: right center;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(118, 75, 162, 0.4);
+}
+
+.start-btn {
+    background: linear-gradient(135deg, #d93611, #168970, #631abc);
+    animation: btnGlow 2s ease-in-out infinite;
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5253);
+    animation: btnGlowRed 3s ease-in-out infinite;
+}
+
+/* Button glow animations */
+@keyframes btnGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(78,205,196,0.4); }
+    50% { box-shadow: 0 0 25px rgba(78,205,196,0.8); }
+}
+
+@keyframes btnGlowRed {
+    0%, 100% { box-shadow: 0 0 10px rgba(255,107,107,0.4); }
+    50% { box-shadow: 0 0 25px rgba(255,107,107,0.8); }
+}
+
+/* Disabled states */
+.start-btn:disabled, 
+.timeBtn1:disabled, .timeBtn2:disabled, .timeBtn3:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Time buttons styling */
+.timeBtn1, .timeBtn2, .timeBtn3 {
+    height: 7vh;
+    width: 30vh;
+    font-size: 2.5vh;
+    border-radius: 2vh;
+    margin-bottom: 4vh;
+    letter-spacing: 1px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    .container {
+        padding: 30px;
+    }
+}

@@ -1,0 +1,202 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background: #C33764;  /* fallback for old browsers */
+background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+   color: white;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    gap: 20px;
+}
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    height: 55vmax;
+    width: 35vmax;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;  
+    background-image: radial-gradient( circle farthest-corner at 50% 52.5%,  rgba(14,53,92,1) 0%, rgba(16,14,72,1) 90% );
+}
+
+h1{
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.color-display{
+
+    background: linear-gradient(135deg, #da075f, #0842e1) ;
+    border-radius: 15px;
+    height: 30px;
+    width: 400px;
+    font-size: 25px;
+    text-align: center;
+    align-items: center;
+    
+}
+
+.message{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+  background: linear-gradient(270deg, #f03603, #eb1c79, #06b32e, #f74fde);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 65, 108, 0.6);
+  animation: gradientMove 6s ease infinite;
+  transition: all 0.2.5s ease-in-out;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  10% {
+    background-position: 0% 50%;
+  }
+  40% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.streak-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 100px;
+    width: 600px;
+}
+.streak-box {
+  margin-left: 50px;
+  height: 70px;
+  width: 130px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background: #040e6c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #007a92, #07126e);  /* Chrome 10-25, Safari 5.1-6 */
+
+
+  
+}
+
+
+
+
+h3{
+    margin-top: 7px;
+}
+
+
+
+.streak-number {
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(270deg, #f03603, #b0eb1c, #06b32e, #6e4ff7);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 65, 108, 0.6);
+  animation: gradientMove 5s ease infinite;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.controls{
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); 
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 8px rgba(37, 117, 252, 0.4);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); 
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(37, 117, 252, 0.6);
+}
+
+button:active {
+    transform: scale(1.05);
+}
+.color-box-container{
+
+display: flex;
+    width: 100%;
+   
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.color-box {
+    margin-top: 10px;
+    height: 10vmax;
+    width: 30%;
+    border: 1px solid white;
+}
+
+.color-box:hover {
+      transform: translatey(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+   
+
+
+

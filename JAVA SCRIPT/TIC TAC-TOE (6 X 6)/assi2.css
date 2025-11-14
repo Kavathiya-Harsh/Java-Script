@@ -1,0 +1,68 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background-color:#26a1da5e ;
+}
+
+.container{
+    height: 120vh;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.game{
+    width: 89vmin;
+    height: 92vmin;
+    border: 0px solid rgb(41, 13, 131);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    border-radius: 30px;
+    
+
+}
+
+.btn{
+    height: 13vmin;
+    width: 13vmin;
+    box-shadow:  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background: linear-gradient(to right,#314755 33%,#26a0da 33%,#314755 33%);
+    font-size: 25px;
+    font-weight: bold;
+    color:deepskyblue;
+    border-radius: 20px;
+}
+
+.btn:hover{
+   
+    text-decoration: none;
+}
+
+
+         .btn{background: linear-gradient(to right, #4b6cb7 0%, #182848  51%, #4b6cb7  100%)}
+         .btn {
+          
+            transition: 0.45s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 10px 10px 20px #0a3a7d;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn:hover {
+            background-position: right center; 
+            color: #fff;
+             transform: scale(1.05);
+    color: dodgerblue;
+            text-decoration: none;
+          }
+         
+
